@@ -14,17 +14,18 @@ nav span {
 }
 
 .right-content {
-  text-align: right; 
   font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .right-content span {
-  display: block; 
   margin-bottom: 0.5em; 
 }
 
 .right-content i {
-  display: block;
+  margin-left: 0.5em;
   color: red;
 }
 
