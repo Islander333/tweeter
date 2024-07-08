@@ -50,3 +50,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.new-tweet .counter.zero {
+  color: red;
+}
