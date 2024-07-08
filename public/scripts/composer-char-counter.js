@@ -14,7 +14,7 @@ $('.new-tweet textarea').on('input', function() {
   }
   
   //update text as user types
-  const counter = $(this).closest('.new-tweet').find('.counter');
+  const counter = $(this).parent().find('.counter');
   counter.text(remainingLength);
 
 //add zero class for styling if counter is 0
