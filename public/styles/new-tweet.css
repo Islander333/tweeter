@@ -1,4 +1,5 @@
 .new-tweet {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +16,7 @@
 }
 
 .new-tweet form {
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
@@ -54,3 +56,4 @@
 .new-tweet .counter.zero {
   color: red;
 }
+
