@@ -1,26 +1,26 @@
 .tweets-container {
-  width: 80%;
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding: 20px;
-  border: 2px solid;
-  border-color: black;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.tweets-container:hover {
-  box-shadow: 4px 8px 8px rgb(41, 36, 36);
+  padding: 10px;
 }
 
 .tweet {
-  width: 90%;
+  width: 80%;
   background-color: white;
-  padding: 5px;
   margin: 5px;
+  border: 2px solid;
+  border-color: black;
+  padding: 20px 10px;
+  margin: 10px;
+}
+
+.tweet:hover {
+  box-shadow: 4px 8px 8px rgb(41, 36, 36);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .tweets-header {
