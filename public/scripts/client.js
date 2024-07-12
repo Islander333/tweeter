@@ -67,7 +67,21 @@ return $tweet;
 //document ready
 $(document).ready(function() {
   renderTweets(data);
+
+  //event listener for submit
+  $('form').on('submit', function(event) {
+    //prevent default form submission
+    event.preventDefault();
+    console.log('form submission prevented');
+  })
 });
+
+
+//serialize form data
+const serializedData = $(this).serialize();
+
+//submit post request with serialized data
+$.post('/tweets/', serializedData);
 
 
 
