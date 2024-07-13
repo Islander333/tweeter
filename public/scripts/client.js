@@ -4,31 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+
 
 const renderTweets = function(tweets) {
 // loops through tweets
@@ -53,7 +29,7 @@ let $tweet = $(`<article class="tweet">
     <p> ${tweet.content.text}</p>
   </div>
   <footer>
-    <span>${tweet.created_at}</span>
+    <span>${timeago.format(tweet.created_at)}</span>
     <div class="tweet-actions">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -66,22 +42,36 @@ return $tweet;
 
 //document ready
 $(document).ready(function() {
-  renderTweets(data);
+  //implement loadTweets function
+  const loadTweets = function() {
+    //make ajax get request to /tweets
+    $.get('/tweets', function(tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  //call loadTweets function to load the tweets
+  loadTweets();
+  
 
   //event listener for submit
   $('form').on('submit', function(event) {
     //prevent default form submission
     event.preventDefault();
     console.log('form submission prevented');
-  })
+
+     //serialize form data
+     const serializedData = $(this).serialize();
+
+     //submit post request with serialized data
+     $.post('/tweets/', serializedData);
+});
 });
 
 
-//serialize form data
-const serializedData = $(this).serialize();
+   
 
-//submit post request with serialized data
-$.post('/tweets/', serializedData);
+
 
 
 
