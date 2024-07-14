@@ -80,8 +80,6 @@ $(document).ready(function() {
     event.preventDefault();
     console.log('form submission prevented');
 
-    //hide any existing err messages
-    hideErrorMessages();
 
     //get the text
     const tweetText = $('#tweet-text').val().trim();
@@ -103,9 +101,11 @@ $(document).ready(function() {
      //submit post request with serialized data
      $.post('/tweets/', serializedData, function() {
       //reload tweet after submission and clear tweet text
-      loadTweets();
-      $('#tweet-text').val('');
+       $('#tweet-text').val('');
       hideErrorMessages();
+      loadTweets();
+      //reset char counter to 140
+      $('.counter').text('140').removeClass('zero');
      });
 
    
