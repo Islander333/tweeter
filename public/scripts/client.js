@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//function to escape text + sanitize user generated code
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 
 const renderTweets = function(tweets) {
@@ -23,12 +29,12 @@ let $tweet = $(`<article class="tweet">
   <div class="tweets-header">
     <div class="tweets-header-left">
       <i class="fa-solid fa-user"></i>
-    <h3>${tweet.user.name}</h3>
+    <h3>${escape(tweet.user.name)}</h3>
     </div>
-    <span>${tweet.user.handle}</span>
+    <span>${escape(tweet.user.handle)}</span>
   </div>
   <div class="tweet-content">
-    <p> ${tweet.content.text}</p>
+    <p> ${escape(tweet.content.text)}</p>
   </div>
   <footer>
     <span>${timeago.format(tweet.created_at)}</span>
@@ -73,6 +79,7 @@ $(document).ready(function() {
 
     if (tweetText.length > 140) {
       alert('Tweet content exceeds 140 characters.')
+      return;
     }
 
      //serialize form data
