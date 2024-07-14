@@ -11,6 +11,18 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
+  //function to display error messages
+  const errorMessages = function(message) {
+    const $errorElement = $('.error-message');
+    //show err with slidedown animation
+    $errorElement.text(message).slideDown();
+   };
+
+   //function to hide error messages
+   const hideErrorMessages = function() {
+    const $errorElement = $('.error-message');
+    $errorElement.slideUp();
+   }
 
 const renderTweets = function(tweets) {
   //clear tweets before rendering new ones
@@ -68,17 +80,20 @@ $(document).ready(function() {
     event.preventDefault();
     console.log('form submission prevented');
 
+    //hide any existing err messages
+    hideErrorMessages();
+
     //get the text
     const tweetText = $('#tweet-text').val().trim();
 
     //form validations
     if (!tweetText) {
-      alert('Tweet cannot be empty.');
+      errorMessages('Tweet cannot be empty.');
       return;
     }
 
     if (tweetText.length > 140) {
-      alert('Tweet content exceeds 140 characters.')
+      errorMessages('Tweet content exceeds 140 characters.')
       return;
     }
 
@@ -90,7 +105,10 @@ $(document).ready(function() {
       //reload tweet after submission and clear tweet text
       loadTweets();
       $('#tweet-text').val('');
+      hideErrorMessages();
      });
+
+   
 });
 });
 

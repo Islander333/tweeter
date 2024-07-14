@@ -57,3 +57,12 @@
   color: red;
 }
 
+.error-message {
+  display: none;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid red;
+  border-radius: 4px;
+}
