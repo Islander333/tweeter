@@ -8,3 +8,17 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+
+@media (min-width: 1024px) {
+  header {
+    margin-top: 40px;
+    width: 25%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 200px 20px 20px 20px;
+    position: fixed;
+    top: 120px;
+    left: 0;
+  }
+}

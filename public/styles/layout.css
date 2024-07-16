@@ -34,3 +34,17 @@ body {
   flex-direction: column;
   background-color:#f4f1ec;
  }
+
+
+ @media (min-width: 1024px) {
+  main {
+    width: 75%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 0x;
+    position: relative;
+  }
+ }

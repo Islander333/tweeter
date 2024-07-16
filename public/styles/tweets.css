@@ -61,3 +61,14 @@
 .tweet-actions i:hover {
   color: rgb(220, 168, 11);
 }
+
+
+@media (min-width: 1024px) {
+  .tweets-container {
+    width: 100%;
+  }
+
+  .tweet {
+    width: 100%;
+  }
+}
