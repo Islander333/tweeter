@@ -114,6 +114,27 @@ $('.compose-button').on('click', function() {
   $('.new-tweet').slideToggle();
 });
 
+
+//show or hide scroll-top button based on position
+$(window).on('scroll', function() {
+  if ($(window).scrollTop() > 100) {
+    $('.scroll-top-button').fadeIn();
+  } else {
+    $('.scroll-top-button').fadeOut();
+  }
+});
+
+//scroll to top and show text area when scroll-top button clicked
+$('.scroll-top-button').on('click', function() {
+  $('html, body').animate({ scrollTop: 0 }, 'fast', function() {
+    $('.new-tweet').slideDown('fast', function() {
+      $('#tweet-text').focus();
+    });
+  });
+});
+
+
+
 });
 
 
