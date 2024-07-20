@@ -107,9 +107,13 @@ $(document).ready(function() {
       //reset char counter to 140
       $('.counter').text('140').removeClass('zero');
      });
-
-   
 });
+
+$('.compose-button').on('click', function() {
+  //toggle visibility of new-tweet
+  $('.new-tweet').slideToggle();
+});
+
 });
 
 

@@ -1,3 +1,16 @@
+
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -22,7 +35,9 @@ nav span {
   display: flex;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
+
 
 .right-content span {
   margin-bottom: 0.5em; 
@@ -31,6 +46,10 @@ nav span {
 .right-content i {
   margin-left: 0.5em;
   color: red;
+}
+
+.compose-button:active i {
+  animation: slide 0.5s;
 }
 
 @media (min-width: 1024px) {
