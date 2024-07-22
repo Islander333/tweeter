@@ -19,6 +19,12 @@ It is an AJAX-based app that uses jQuery, HTML5 and CSS. The app lets the user p
 
 ## Final Product
 
+!["Desktop](https://github.com/Islander333/tweeter/blob/master/docs/Tweeter-desktop.png?raw=true)
+
+!["Tablet](https://github.com/Islander333/tweeter/blob/master/docs/Tweeter-tablet.png?raw=true)
+
+!["Mobile](https://github.com/Islander333/tweeter/blob/master/docs/Tweeter-mobile.png?raw=true)
+
 ## Getting Started
 
 1. Clone this repository onto your local device
