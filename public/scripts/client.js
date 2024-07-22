@@ -116,7 +116,7 @@ $(document).ready(function() {
      })
      .fail(function(jqXHR, textStatus, errorThrown) {
       const statusCode = jqXHR.status;
-      errorMessages(`Failed to post tweet: ${textStatus} ${statusCode}`);
+      errorMessages(`Failed to post tweet: ${textStatus}, Status code: ${statusCode}`);
       console.error(`Error: ${textStatus}`, errorThrown);
      })
 });
