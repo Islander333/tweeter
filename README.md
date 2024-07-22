@@ -29,7 +29,7 @@ It is an AJAX-based app that uses jQuery, HTML5 and CSS. The app lets the user p
 
 1. Clone this repository onto your local device
 2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+3. Start the web server using the `npm run local` or `npm start` commands. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
