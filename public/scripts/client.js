@@ -65,10 +65,16 @@ $(document).ready(function() {
   //implement loadTweets function
   const loadTweets = function() {
     //make ajax get request to /tweets
-    $.get('/tweets', function(tweets) {
+    $.get('/tweets')
+    .done(function(tweets) {
       renderTweets(tweets);
-    });
-  };
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+    const statusCode = jqXHR.status;
+    errorMessages(`Failed to load tweets: ${textStatus} (Status Code: ${statusCode})`);
+    console.error(`${textStatus}`, errorThrown);
+});
+    };
 
   //call loadTweets function to load the tweets
   loadTweets();
@@ -99,14 +105,20 @@ $(document).ready(function() {
      const serializedData = $(this).serialize();
 
      //submit post request with serialized data
-     $.post('/tweets/', serializedData, function() {
+     $.post('/tweets/', serializedData)
+      .done(function() {
       //reload tweet after submission and clear tweet text
        $('#tweet-text').val('');
       hideErrorMessages();
       loadTweets();
       //reset char counter to 140
       $('.counter').text('140').removeClass('zero');
-     });
+     })
+     .fail(function(jqXHR, textStatus, errorThrown) {
+      const statusCode = jqXHR.status;
+      errorMessages(`Failed to post tweet: ${textStatus} ${statusCode}`);
+      console.error(`Error: ${textStatus}`, errorThrown);
+     })
 });
 
 $('.compose-button').on('click', function() {
