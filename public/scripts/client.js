@@ -91,7 +91,7 @@ $(document).ready(function() {
     }
 
     if (tweetText.length > 140) {
-      errorMessages('Tweet content exceeds 140 characters.')
+      errorMessages('Tweet cannot exceed 140 characters.')
       return;
     }
 

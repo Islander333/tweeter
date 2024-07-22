@@ -8,17 +8,14 @@ $('.new-tweet textarea').on('input', function() {
   const currentLength = $(this).val().length;
   const remainingLength = maxLength - currentLength;
 
-  //add check to stop counter at 0
-  if (remainingLength < 0) {
-    remainingLength = 0;
-  }
+  
   
   //update text as user types
   const counter = $(this).parent().find('.counter');
   counter.text(remainingLength);
 
 //add zero class for styling if counter is 0
-  if (remainingLength === 0) {
+  if (remainingLength <= 0) {
     counter.addClass('zero');
   } else {
     counter.removeClass('zero');
